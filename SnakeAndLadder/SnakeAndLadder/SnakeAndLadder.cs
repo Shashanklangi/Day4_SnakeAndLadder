@@ -8,13 +8,12 @@ namespace SnakeAndLadder
 {
     public class Program
     {
-        public int Starting_Position = 0;
         public void SnakeAndLadder()
         {
 
-            Console.WriteLine(" *****Welcome to the Snake Ans Ladder Game***** ");
-            Console.WriteLine(" Your Initial Position is: " + Starting_Position);
-
+            Random diceroll = new Random(); 
+            int dice =diceroll.Next(1, 7);
+            Console.WriteLine(" Player roll the dice and the number is :" + dice);
 
         }
     }
