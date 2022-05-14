@@ -8,8 +8,8 @@ namespace SnakeAndLadder
 {
     public class Program
     {
-        public int PlayerPosition = 0; 
-        const int NoPlay = 0, Ladder = 1, Snake = 2;
+        public int PlayerPosition = 0;
+        const int NoPlay = 0, Ladder = 1, Snake = 2, Winning = 100;
         public void SnakeAndLadder()
         {
             while (PlayerPosition < 100)
