@@ -8,6 +8,8 @@ namespace SnakeAndLadder
 {
     public class Program
     {
+        public int PlayerPosition = 0; 
+        const int NoPlay = 0, Ladder = 1, Snake = 2;
         public void SnakeAndLadder()
         {
 
@@ -15,7 +17,30 @@ namespace SnakeAndLadder
             int dice =diceroll.Next(1, 7);
             Console.WriteLine(" Player roll the dice and the number is :" + dice);
 
+            Random check = new Random();
+            int Option = check.Next(0, 3);  
+
+            switch (Option)
+            {
+                case NoPlay:
+                    Console.WriteLine("No Play");
+                    break;
+                case Ladder:
+                    PlayerPosition += dice;
+                    Console.WriteLine("You reached a Ladder : " + PlayerPosition);
+                    break;
+                case Snake:
+                    PlayerPosition -= dice;
+                    Console.WriteLine("You got eaten by a Snake : " + PlayerPosition);
+                    break;
+                default:
+                    Console.WriteLine("Enter a valid input.");
+                    break;
+
+            }
         }
+
     }
+    
   
 }              
