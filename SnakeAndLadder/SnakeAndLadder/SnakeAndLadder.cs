@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SnakeAndLadder
+﻿namespace SnakeAndLadder
 {
     public class Program
     {
         public int PlayerPosition = 0;
+        public int count = 0;
         const int NoPlay = 0, Ladder = 1, Snake = 2, Winning = 100;
         public void SnakeAndLadder()
         {
-            while (PlayerPosition < 100)
+            while (this.PlayerPosition < 100)
             {
                 Random diceroll = new Random();
                 int dice = diceroll.Next(1, 7);
@@ -37,18 +32,11 @@ namespace SnakeAndLadder
                     default:
                         Console.WriteLine("Enter a valid input.");
                         break;
-
                 }
-                if(PlayerPosition < 0)
-                {
-                    PlayerPosition = 0;
-                }
-
-
+                count++;
             }
+            Console.WriteLine("The no. of times dice played to win : " + " " + count);
+            Console.WriteLine("the position is : " + this.PlayerPosition);
         }
-
     }
-    
-  
-}              
+}
